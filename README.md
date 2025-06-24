@@ -1,69 +1,53 @@
-# React + TypeScript + Vite
+# Sistema de Inicio de sesión, registro y roles
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Sistema de registro e inicio de sesión para usuarios conectados a una
+base de datos local o una remota dependiendo de la configuración. Además
+este sistema tiene la finalidad servir como roles para visualizar distintas vistas según el usuario ingresado.
 
-Currently, two official plugins are available:
+# Librerías.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Librerías de desarrollo
 
-## Expanding the ESLint configuration
+- Zustand
+- Tanstack query
+- Tailwind
+- React v19
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Librerías de testing
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- StoryBook
+- Vitest
+- React testing library
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+### Librerías de utilidad
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Json-server (para ejecutar un servidor local sin backend)
+- Prettier
+
+# Estructura del proyecto.
+
+Este proyecto fue realizado bajo la arquitectura de atomic design para la reutilización de componentes y además poder generar pruebas unitarias de manera más clara.
+
+```bash
+├── src
+│   ├── assets
+│   ├── components
+│       └──atoms
+│       └──molecules
+│       └──organism
+│       └──templates
+│       └──pages
+├── stories
+│   └── ....
+└── .gitignore
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+# Comandos
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+| Ejecutar test unitarios `pnpm run test`
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+| Ejecutar servidor local `pnpm run json-server`
+
+| Ejecutar app `pnpm run dev`
+
+| Crear un componente atomic design `pnpm run create:component`
