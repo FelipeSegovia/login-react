@@ -27,6 +27,7 @@
     "@storybook/addon-a11y": "^9.0.13",
     "@storybook/addon-docs": "^9.0.13",
     "@storybook/addon-onboarding": "^9.0.13",
+    "@storybook/addon-styling-webpack": "^2.0.0",
     "@storybook/addon-vitest": "^9.0.13",
     "@storybook/react-vite": "^9.0.13",
     "@testing-library/dom": "^10.4.0",
