@@ -1,6 +1,6 @@
 import type { ComponentProps } from 'react'
-import Label from './Label'
 import type { Meta, StoryObj } from '@storybook/react-vite'
+import Label from './Label'
 
 type StoryProps = ComponentProps<typeof Label>
 
@@ -11,17 +11,9 @@ const meta: Meta<StoryProps> = {
     as: {
       control: {
         type: 'select',
-        options: ['p', 'span', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
       },
+      options: ['p', 'span', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
       defaultValue: 'span',
-    },
-    className: {
-      control: 'text',
-      defaultValue: 'label',
-    },
-    id: {
-      control: 'text',
-      defaultValue: 'label-id',
     },
   },
 } satisfies Meta<StoryProps>
@@ -32,7 +24,7 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   args: {
-    as: 'span',
+    as: 'h4',
     children: 'Default Label',
   },
 }

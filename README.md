@@ -23,6 +23,7 @@ este sistema tiene la finalidad servir como roles para visualizar distintas vist
 
 - Json-server (para ejecutar un servidor local sin backend)
 - Prettier
+- Plop (automatizar la creación de componentes)
 
 # Estructura del proyecto.
 
@@ -37,17 +38,19 @@ Este proyecto fue realizado bajo la arquitectura de atomic design para la reutil
 │       └──organism
 │       └──templates
 │       └──pages
-├── stories
+├── stories ( próximamente deprecado )
 │   └── ....
 └── .gitignore
 ```
 
 # Comandos
 
-| Ejecutar test unitarios `pnpm run test`
+| Ejecutar test unitarios `pnpm test`
 
-| Ejecutar servidor local `pnpm run json-server`
+| Ejecutar servidor local `pnpm json-server`
 
-| Ejecutar app `pnpm run dev`
+| Ejecutar app `pnpm dev`
 
-| Crear un componente atomic design `pnpm run create:component`
+| Ejecutar storybook `pnpm storybook`
+
+| Crear un componente atomic design `pnpm create:component`
